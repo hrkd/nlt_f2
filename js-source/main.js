@@ -1,11 +1,11 @@
-;(function(){
-var App = require('./app');
-var AppModel = require('./model/appmodel');
-var appmodel = new AppModel();
+var APP = {} || APP;
 
-appmodel.apiclient().done(function(data){
-  console.log(data);
-});
+(function(){
+'use strict';
+var Router = require('./Router');
+var Class = function(s) {
+  new Router();
+};
 
-console.log(App.NAME);
-})();
+new Class();
+})(APP);
