@@ -1,9 +1,16 @@
-;(function(){
+var APP = {} || APP;
+
+(function(APP){
 'use strict';
+var util = require('util');
+var Super = require('../app');
+var that;
 
 var Class = function(s) {
-  console.log('const eclass.');
+  that = this;
+  console.log('const class.');
 };
+util.inherits(Class,Super);
 
 //shortcut
 var p = Class.prototype;
@@ -19,4 +26,4 @@ function privateMethod(){
 module.exports = (function() {
   return Class;
 })();
-})();
+})(APP);
