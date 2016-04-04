@@ -1,0 +1,15 @@
+{
+  "text": {
+    "header":"Middleman is Watching"
+  },
+  "items": [
+    {
+      "body":"item01",
+      "link":"http://middlemanapp.com/"
+    },
+    {
+      "body":"item02",
+      "link":"http://middlemanapp.com/"
+    }
+  ]
+}
