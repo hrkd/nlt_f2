@@ -1,4 +1,4 @@
-.tmp/
+.tmp/javascripts/*.js
 .sass-cache/
 build/
 coverage/
