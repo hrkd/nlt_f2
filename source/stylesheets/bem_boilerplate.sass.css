@@ -12,6 +12,8 @@
   modifier
   見た目や振る舞いを変更するプロパティです。
   ex. 検索ボタン、テキスト入力エリアの色、形
+  
+  Styleguide 1.0
   */
 
 //block
@@ -19,9 +21,15 @@
   color: #fff
   width: 100%
 
+  //mixin element
+  @mixin __element2
+    &__element2
+      width: 60px
+
   //mixin modifier
   @mixin _modifier4
-    color: #ccc
+    &_modifier4
+      color: #ccc
 
   //element
   &__element1
@@ -39,6 +47,4 @@
         color: #ddd
       @include _modifier4
 
-  //element
-  &__element2
-    width: 60px
+  @include __element2
