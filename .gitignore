@@ -10,3 +10,4 @@ vendor/
 npm-debug.log
 .bundle/
 Gemfile.lock
+source/styleguide/
