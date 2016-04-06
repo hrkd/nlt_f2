@@ -35,8 +35,8 @@
   },
   "scripts": {
     "build:js": "browserify -t reactify js-source/main.js > ./.tmp/javascripts/all.js",
-    "build:css": "node_modules/node-sass/bin/node-sass source/stylesheets/*.sass build/stylesheets/*.css",
-    "build:sg": "npm run build:css & node_modules/sc5-styleguide/bin/styleguide --kss-source \"source/stylesheets/*\" --style-source \"build/stylesheets/*\" --output source/styleguide --overviewPath \"README.md\" --appRoot \"/styleguide\"",
+    "build:css": "node_modules/node-sass/bin/node-sass source/stylesheets/ -o .tmp/stylesheets/",
+    "build:sg": "npm run build:css & node_modules/sc5-styleguide/bin/styleguide --kss-source \"source/stylesheets/*\" --style-source \".tmp/stylesheets/*\" --output source/styleguide --overviewPath \"README.md\" --appRoot \"/styleguide\"",
     "build": "npm run build:js & npm run build:css",
     "watch:js": "watch 'npm run build:js' js-source/ -du",
     "watch:css": "watch 'npm run build:sg' source/stylesheets/ -du",
