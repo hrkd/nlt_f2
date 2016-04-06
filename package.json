@@ -8,6 +8,7 @@
     "test": "spec/"
   },
   "devDependencies": {
+    "bootstrap-sass": "^3.3.6",
     "browserify": "^13.0.0",
     "browserify-istanbul": "^0.2.1",
     "espowerify": "^1.0.0",
@@ -35,14 +36,15 @@
   },
   "scripts": {
     "build:js": "browserify -t reactify js-source/main.js > ./.tmp/javascripts/all.js",
-    "build:css":"./node_modules/node-sass/bin/node-sass sass-source/ -o .tmp/stylesheets/",
+    "build:css": "./node_modules/node-sass/bin/node-sass sass-source/ --include-path ./node_modules/ -o .tmp/stylesheets/",
     "build:sg": "npm run build:css & node_modules/sc5-styleguide/bin/styleguide --kss-source \"sass-source/*\" --style-source \".tmp/stylesheets/*\" --output source/styleguide --overviewPath \"README.md\" --appRoot \"/styleguide\"",
-    "build":    "npm run build:js & npm run build:css & npm run build:sg",
+    "build:font": "cp -fr ./node_modules/bootstrap-sass/assets/fonts/ ./.tmp/fonts/",
+    "build": "npm run build:js & npm run build:font & npm run build:css & npm run build:sg",
     "watch:js": "watch 'npm run build:js' js-source/ -du",
-    "watch:css":"watch 'npm run build:css' sass-source/ -du",
+    "watch:css": "watch 'npm run build:css' sass-source/ -du",
     "watch:sg": "watch 'npm run build:sg' sass-source/ -du",
-    "watch":    "npm run watch:js & npm run watch:css & npm run watch:sg",
-    "test":     "karma start"
+    "watch": "npm run watch:js & npm run watch:css & npm run watch:sg & npm run build:font",
+    "test": "karma start"
   },
   "author": "",
   "license": "ISC"
