@@ -1,0 +1,50 @@
+/*
+  block__element_modifier
+  
+  block
+  「Block」はアプリケーションを「構成するパーツ」基本ユニークな名前をつけ、パーツごとの独立性を保つように。
+  ex. 検索エリア
+  
+  element
+  いくつかの機能を備えた「Block」の部品（要素）
+  ex. 検索ボタン、テキスト入力エリア
+  
+  modifier
+  見た目や振る舞いを変更するプロパティです。
+  ex. 検索ボタン、テキスト入力エリアの色、形
+  
+  Styleguide 1.0
+  */
+
+//block
+.block
+  color: #fff
+  width: 100%
+
+  //mixin element
+  @mixin __element2
+    &__element2
+      width: 60px
+
+  //mixin modifier
+  @mixin _modifier4
+    &_modifier4
+      color: #ccc
+
+  //element
+  &__element1
+    width: 30px
+
+    //modifier
+    &_modifier1
+      background-color: #ccc
+
+    //modifier
+    &_modifier2
+      background-color: #111
+      //modifier
+      &_modifier3
+        color: #ddd
+      @include _modifier4
+
+  @include __element2

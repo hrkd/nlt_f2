@@ -323,17 +323,18 @@ body {
   height: 18.75em;
   margin-top: 6em; }
 
-/* head line
- *
- * Markup:
- * <h1 class="{$modifiers}">テキスト</h1>
- *
- * :hover    - Highlights when hovering.
- * .primary  - Indicates button is the primary action.
- * .smaller  - Indicates button is the primary action.
- *
- * Styleguide 1.1
- */
+/*
+  head line
+
+  Markup:
+  <h1 class="{$modifiers}">テキスト</h1>
+
+  :hover    - Highlights when hovering.
+  .primary  - Indicates button is the primary action.
+  .smaller  - Indicates button is the primary action.
+
+  Styleguide 1.1
+  */
 h1 {
   color: rgba(0, 0, 0, 0.5);
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -347,14 +348,15 @@ h1 {
   h1.smaller {
     font-size: 0.5em; }
 
-/* button example
- *
- * :hover    - Highlights when hovering.
- * .primary  - Indicates button is the primary action.
- * .smaller  - A smaller button
- *
- * Styleguide 1.2
- */
+/*
+  button example
+
+  :hover    - Highlights when hovering.
+  .primary  - Indicates button is the primary action.
+  .smaller  - A smaller button
+
+  Styleguide 1.2
+  */
 .doc {
   margin: 3em 0;
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -372,29 +374,31 @@ h1 {
       color: white;
       transition: all 0.15s linear; }
 
-/* button example
- *
- * :hover    - Highlights when hovering.
- * .primary  - Indicates button is the primary action.
- * .smaller  - A smaller button
- *
- *  Markup:
- *  <h1 class="{$modifiers}">テキスト</h1>
- *
- * Styleguide 2.0
- */
+/*
+  button example
+
+  :hover    - Highlights when hovering.
+  .primary  - Indicates button is the primary action.
+  .smaller  - A smaller button
+
+   Markup:
+   <h1 class="{$modifiers}">テキスト</h1>
+
+  Styleguide 2.0
+  */
 .welcome {
   animation-name: welcome;
-  animation-duration: 0.9s; }
+  animation-duration: .9s; }
 
-/* button example
- *
- * :hover    - Highlights when hovering.
- * .primary  - Indicates button is the primary action.
- * .smaller  - A smaller button
- *
- * Styleguide 3.0
- */
+/*
+  button example
+
+  :hover    - Highlights when hovering.
+  .primary  - Indicates button is the primary action.
+  .smaller  - A smaller button
+
+  Styleguide 3.0
+  */
 @-webkit-keyframes welcome {
   from {
     transform: scale(0);
