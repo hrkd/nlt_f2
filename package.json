@@ -35,13 +35,14 @@
   },
   "scripts": {
     "build:js": "browserify -t reactify js-source/main.js > ./.tmp/javascripts/all.js",
-    "build:css": "node_modules/node-sass/bin/node-sass source/stylesheets/ -o .tmp/stylesheets/",
-    "build:sg": "npm run build:css & node_modules/sc5-styleguide/bin/styleguide --kss-source \"source/stylesheets/*\" --style-source \".tmp/stylesheets/*\" --output source/styleguide --overviewPath \"README.md\" --appRoot \"/styleguide\"",
-    "build": "npm run build:js & npm run build:css",
+    "build:css":"./node_modules/node-sass/bin/node-sass sass-source/ -o .tmp/stylesheets/",
+    "build:sg": "npm run build:css & node_modules/sc5-styleguide/bin/styleguide --kss-source \"sass-source/*\" --style-source \".tmp/stylesheets/*\" --output source/styleguide --overviewPath \"README.md\" --appRoot \"/styleguide\"",
+    "build":    "npm run build:js & npm run build:css & npm run build:sg",
     "watch:js": "watch 'npm run build:js' js-source/ -du",
-    "watch:css": "watch 'npm run build:sg' source/stylesheets/ -du",
-    "watch": "npm run watch:js",
-    "test": "karma start"
+    "watch:css":"watch 'npm run build:css' sass-source/ -du",
+    "watch:sg": "watch 'npm run build:sg' sass-source/ -du",
+    "watch":    "npm run watch:js & npm run watch:css & npm run watch:sg",
+    "test":     "karma start"
   },
   "author": "",
   "license": "ISC"

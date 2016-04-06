@@ -58,7 +58,7 @@ activate :deploy do |deploy|
 end
 
 activate :external_pipeline,
-  name: :browserify,
+  name: :browserify_sass,
   command: build? ? "npm run build":"npm run watch",
   source: "./.tmp/"
 
