@@ -1,3 +1,4 @@
+.tmp/fonts/
 .tmp/javascripts/*.js
 .tmp/stylesheets/*.css
 .sass-cache/

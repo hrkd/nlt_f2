@@ -7,7 +7,10 @@ var Component = React.createClass({
     var data = this.props.data;
     return (
       <div>
-        <h1>React</h1>
+        <h1>
+          <span className="glyphicon glyphicon-search" aria-hidden="true"></span>
+          React
+        </h1>
         <ul>
           {data.map(function(result){
             return (
