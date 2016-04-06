@@ -1,0 +1,109 @@
+@import "normalize"
+
+body
+  background-color: #eee
+  text-align: center
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif
+  font-size: 1em
+
+
+
+.logo img 
+  height: 18.75em
+  margin-top: 6em
+
+/*
+  head line
+  
+  Markup:
+  <h1 class="{$modifiers}">テキスト</h1>
+  
+  :hover    - Highlights when hovering.
+  .primary  - Indicates button is the primary action.
+  .smaller  - Indicates button is the primary action.
+  
+  Styleguide 1.0
+  */
+
+h1
+  color: rgba(0, 0, 0, 0.5)
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif
+  font-size: 1.8em
+  margin: 0
+  &:hover
+    color: #f00
+  &.primary
+    color: #b00
+    font-weight: 400
+  &.smaller
+    font-size: 0.5em
+
+
+/*
+  button example
+  
+  :hover    - Highlights when hovering.
+  .primary  - Indicates button is the primary action.
+  .smaller  - A smaller button
+  
+  Styleguide 1.1
+  */
+.doc
+  margin: 3em 0
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif
+  font-size: 1.1em
+  font-weight: 300
+  a
+    border: 1px solid white
+    border-radius: 3px
+    padding: 0.75em 0.7em
+    color: white
+    text-decoration: none
+    transition: color 0.1s linear
+    &:hover
+      background: rgba(0,0,0,0.2)
+      color: white
+      transition: all 0.15s linear
+
+
+/*
+  button example
+  
+  :hover    - Highlights when hovering.
+  .primary  - Indicates button is the primary action.
+  .smaller  - A smaller button
+  
+   Markup:
+   <h1 class="{$modifiers}">テキスト</h1>
+  
+  Styleguide 2.0
+  */
+.welcome 
+  animation-name: welcome
+  animation-duration: .9s
+
+/*
+  button example
+  
+  :hover    - Highlights when hovering.
+  .primary  - Indicates button is the primary action.
+  .smaller  - A smaller button
+  
+  Styleguide 3.0
+  */
+@-webkit-keyframes welcome 
+  from
+    transform: scale(0)
+    opacity: 0
+
+  50%
+    transform: scale(0)
+    opacity: 0
+
+  82.5%
+    transform: scale(1.03)
+    animation-timing-function: ease-out
+    opacity: 1
+
+  to
+    transform: scale(1)

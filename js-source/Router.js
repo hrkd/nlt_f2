@@ -9,7 +9,7 @@ var apiClient = new ApiClient();
 var AppModel  = require('./model/AppModel');
 var appModel  = new AppModel();
 
-var AppView  = require('./view/AppView');
+var AppView  = require('./view/AppView.jsx');
 var appView  = new AppView();
 
 var that;
