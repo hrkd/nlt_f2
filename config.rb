@@ -47,12 +47,12 @@ end
 
 activate :deploy do |deploy|
   deploy.deploy_method = :rsync
-  deploy.host   = 'host'
-  deploy.path   = '/var/www/xxx'
+  deploy.host   = data.sercret.deployserver.host
+  deploy.path   = data.sercret.deployserver.path
   deploy.build_before = true # default: false
   # Optional Settings
   # deploy.user  = 'user' # no default
-  deploy.port  = 22 # ssh port, default: 22
+  deploy.port  = data.sercret.deployserver.port
   deploy.clean = true # remove orphaned files on remote host, default: false
   # deploy.flags = '-rltgoDvzO --no-p --del' # add custom flags, default: -avz
 end

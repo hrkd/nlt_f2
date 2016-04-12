@@ -12,3 +12,4 @@ npm-debug.log
 .bundle/
 Gemfile.lock
 source/styleguide/
+data/sercret.json
