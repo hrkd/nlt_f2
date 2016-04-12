@@ -1,10 +1,10 @@
-(function(){
+;(function(){
 'use strict';
 var util = require('util');
 var Super = require('../app');
 var React = require('react');
 var ReactDOM = require('react-dom');
-var HelloWorld = require('./HelloWorld.jsx');
+var Wrapper = require('./Wrapper.jsx');
 var that;
 
 var Class = function(s) {
@@ -18,9 +18,9 @@ var p = Class.prototype;
 
 //public method
 p.refresh = function(){
-  var data = that.APP.state.apiData.items;
+  var data = p.APP.state;
   ReactDOM.render(
-    <HelloWorld data={data}></HelloWorld>,
+    <Wrapper data={data}/>,
     document.getElementById('container')
   );
 };

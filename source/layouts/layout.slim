@@ -13,5 +13,14 @@ html
     == javascript_include_tag  "all"
 
   body class="#{page_classes}"
-    #container
+    #wrapper
+      header.header
+        h1.header__inner
+          img.header__logo src="/images/logo.svg" width="" height=""
       == yield
+
+      footer.footer
+        .footer__inner
+          p
+            | made by 
+            a href="http://www.hrkd.net" hrkd

@@ -13,6 +13,15 @@ var Class = function() {
 //shortcut
 var p = Class.prototype;
 
+p.getVideoUrl = function(data){
+    var youtubeUrl = 'http://youtube.com/';
+
+    if(data.id.kind == "youtube#video"){
+      return youtubeUrl+"watch?v="+data.id.videoId;
+    }else{
+      return youtubeUrl+"playlist?list="+data.id.playlistId;
+    }
+};
 
 //public
 p.getRatio = function(stageW, stageH, targetW, targetH,type){

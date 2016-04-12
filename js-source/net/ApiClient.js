@@ -1,11 +1,15 @@
 ;(function(){
 'use strict';
-
+var util = require('util');
+var Super = require('../app');
 var $ = require('jquery');
+var that;
 
 var Class = function(s) {
+  that = this;
   console.log('const ApiClient class.');
 };
+util.inherits(Class,Super);
 
 //shortcut
 var p = Class.prototype;
@@ -15,8 +19,9 @@ p.publicMethod = function(){
 };
 
 p.get= function(){
-  return get('http://api.nowlistening.tokyo/jwave',{},true)
+  return get('http://api.nowlistening.tokyo/'+that.APP.state.currentStation.key,{},true)
     .then(function(data){
+      that.APP.state.artistData = data;
       return getYoutubeInfo(data);
     });
 };
@@ -24,14 +29,13 @@ p.get= function(){
 //private method
 function getYoutubeInfo(data) {
   var APIKEY = 'AIzaSyD5VdH4vZuheJMLDjwqr8Y0CaR4RQzorAc',
-      searchUrl = 'https://www.googleapis.com/youtube/v3/search',
-      watchUrl = 'http://youtube.com/watch';
+      searchUrl = 'https://www.googleapis.com/youtube/v3/search';
 
   return get(searchUrl,{
-    q :    data.title+" "+ data.artist,
-    key:   APIKEY,
-    part : "snippet",
-    alt:   "json"
+    q:   data.title+" "+ data.artist,
+    key: APIKEY,
+    part:"snippet",
+    alt: "json"
   },false);
 }
 

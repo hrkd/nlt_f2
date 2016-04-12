@@ -7,7 +7,19 @@ var Class = function(s) {
 //shortcut
 var p = Class.prototype;
 p.APP = {
-  state: {},
+  state: {
+    currentStation: {
+      name: "J-WAVE",
+      key: 'jwave'
+    },
+    stations: [{
+      name: "J-WAVE",
+      key: 'jwave'
+    },{
+      name: "TokyoFM",
+      key: 'tfm'
+    }]
+  },
   NAME : 'this app name'
 };
 p.observer = new Observer();

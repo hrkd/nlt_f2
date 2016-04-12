@@ -8,6 +8,7 @@
     "test": "spec/"
   },
   "devDependencies": {
+    "bootstrap": "^3.3.6",
     "bootstrap-sass": "^3.3.6",
     "browserify": "^13.0.0",
     "browserify-istanbul": "^0.2.1",
@@ -35,7 +36,7 @@
     "woothee": "^1.3.0"
   },
   "scripts": {
-    "build:js": "browserify -t reactify js-source/main.js > ./.tmp/javascripts/all.js",
+    "build:js": "browserify -t reactify js-source/main.js -o ./.tmp/javascripts/all.js",
     "build:css": "./node_modules/node-sass/bin/node-sass sass-source/ --include-path ./node_modules/ -o .tmp/stylesheets/",
     "build:sg": "npm run build:css & node_modules/sc5-styleguide/bin/styleguide --kss-source \"sass-source/*\" --style-source \".tmp/stylesheets/*\" --output source/styleguide --overviewPath \"README.md\" --appRoot \"/styleguide\"",
     "build:font": "cp -fr ./node_modules/bootstrap-sass/assets/fonts/ ./.tmp/fonts/",

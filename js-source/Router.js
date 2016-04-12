@@ -12,21 +12,27 @@ var appModel  = new AppModel();
 var AppView  = require('./view/AppView.jsx');
 var appView  = new AppView();
 
-var that;
-
 var Class = function(s) {
-  that = this;
   console.log('const Router class.');
 
   //APIからデータ取得、保存
-  apiClient.get().done(function(data){
-    appModel.replaceData(data);
+  p.observer.on('fetch',function(){
+    apiClient.get().done(function(data){
+      appModel.replaceData(data);
+    });
+  });
+
+  //データが取得されたら実行
+  p.observer.on('replaceData',function(){
+    p.observer.trigger('render');
   });
 
   //htmlを更新
-  that.observer.on('render',function(){
+  p.observer.on('render',function(){
     appView.refresh();
   });
+
+  p.observer.trigger('fetch');
 };
 util.inherits(Class,Super);
 
@@ -41,7 +47,5 @@ p.publicMethod = function(){
 function privateMethod(){
 }
 
-module.exports = (function() {
-  return Class;
-})();
+module.exports = Class;
 })();
